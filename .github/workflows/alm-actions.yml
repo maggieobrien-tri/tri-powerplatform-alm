@@ -12,7 +12,7 @@ jobs:
       with:
         environment-url: 'https://myenv.crm.dynamics.com'
         user-name: 'me@myenv.onmicrosoft.com'
-        password-secret: ${{ secrets.MYPASSWORD }}
+        password-secret: ${{ secrets.TRI_PASS }}
         solution-name: aSolution
         solution-output-file: 'aSolution.zip'
         working-directory: 'out'
@@ -30,11 +30,11 @@ jobs:
       with:
         environment-url: 'https://myenv.crm.dynamics.com'
         user-name: 'me@myenv.onmicrosoft.com'
-        password-secret: ${{ secrets.MYPASSWORD }}
+        password-secret: ${{ secrets.TRI_PASS }}
 
     - name: Prepare solution changes for check-in into source control
       uses: microsoft/powerplatform-actions/branch-solution@v1
       with:
         solution-folder: 'out/solutions/solution one'
         solution-target-folder: 'src/solutions/solution1'
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.TRI_TOKEN }}
